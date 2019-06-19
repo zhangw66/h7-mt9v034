@@ -1,0 +1,9 @@
+Debug/*
+.settings/*
+.*project
+/Debug/
+.vscode/*
+/Release/
+*.cfg
+*.xml
+*.ioc
