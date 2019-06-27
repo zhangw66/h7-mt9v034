@@ -81,7 +81,7 @@ volatile uint32_t boot_time10_us = 0;
 #define TIMER_LED       	0
 #define TIMER_IMAGE			1
 #define LED_TIMER_COUNT		500 /* steps in milliseconds ticks */
-#define IMAGE_RATE_COUNT 30
+#define IMAGE_RATE_COUNT 1000
 #define MS_TIMER_COUNT		1 /* steps in 10 microseconds ticks */
 
 static volatile unsigned timer[NTIMERS];
@@ -217,11 +217,11 @@ i2c_gpio_init();
 	 			 mt9v034_start_stream();
 	 			 HAL_UART_Transmit(&huart3, "[mt9v034]: failed to read sensor id\n", strlen("[mt9v034]: failed to read sensor id\n"), 1000);
 #else
-	 			 uint16_t image_size = FULL_IMAGE_SIZE;
+	 			 uint32_t image_size = FULL_IMAGE_SIZE;
 	 						 if (send_image_now)
 	 						 {
 	 							 /* get size of image to send */
-	 							 uint16_t image_size_send;
+	 							 uint32_t image_size_send;
 	 							 uint16_t image_width_send;
 	 							 uint16_t image_height_send;
 

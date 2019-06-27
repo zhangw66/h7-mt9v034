@@ -54,11 +54,11 @@ enum {
 static uint16_t mt9v034_ReadReg16(uint8_t address);
 static uint8_t mt9v034_WriteReg16(uint16_t address, uint16_t Data);
 static struct mt9v034_reg mt9v034_mode_640x480[] = {
-	#if 0
+	#if 1
 	{0x01, 0x0039},
 	{0x02, 0x0004},
-	{0x03, 0x40},
-	{0x04, 0x40},
+	{0x03, 0x01E0},
+	{0x04, 0x0280},
 	{0x05, 0x005E},
 	{0x06, 0x0039},
 	{0x07, 0x0388},/* Enable Defective Pixel Correction */
